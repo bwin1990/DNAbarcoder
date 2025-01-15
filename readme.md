@@ -16,19 +16,16 @@
 + ### 创建新环境
 + 在 Windows PowerShell 中运行：
 + ```powershell
-+ # 创建新的环境
-+ conda create -n dna_barcode python=3.10 r-base=4.3.1 r-essentials rpy2
-+ ```
-+ 
-+ ### 激活环境
-+ ```powershell
++ # 1. 创建基础环境
++ conda create -n dna_barcode python=3.10
 + conda activate dna_barcode
-+ ```
 + 
-+ ### 或在现有环境中安装
-+ ```powershell
-+ # 在现有环境中安装依赖
-+ conda install -c conda-forge python=3.10 r-base=4.3.1 r-essentials rpy2
++ # 2. 安装 R 和相关包
++ conda install -c conda-forge r-base
++ conda install -c conda-forge r-essentials
++ 
++ # 3. 安装 Python-R 接口
++ conda install -c conda-forge rpy2
 + ```
 
 ## 2. 安装 R 包
@@ -43,26 +40,29 @@ install.packages("DNABarcodes")
 # 如果弹出镜像选择窗口，选择一个距离近的镜像即可
 ```
 
+```
+// Start of Selection
 ## 3. 验证安装
 在 PowerShell 中运行：
 
-```powershell
+\`\`\`powershell
 # 确保在正确的环境中
 conda activate dna_barcode
 
 # 启动 Python
 python
-```
+\`\`\`
 
 然后运行以下代码验证安装：
-```python
+
+\`\`\`python
 import rpy2.robjects as robjects
 # 如果没有报错，说明 rpy2 安装成功
 
 # 测试 R 包是否可用
 robjects.r('library(DNABarcodes)')
 # 如果没有报错，说明 R 包安装成功
-```
+\`\`\`
 
 # 使用说明
 [这里添加如何使用软件的基本步骤]
