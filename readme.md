@@ -18,8 +18,10 @@
 + ```powershell
 + # 创建新的环境
 + conda create -n dna_barcode python=3.10 r-base=4.3.1 r-essentials rpy2
++ ```
 + 
-+ # 激活环境
++ ### 激活环境
++ ```powershell
 + conda activate dna_barcode
 + ```
 + 
@@ -43,6 +45,7 @@ install.packages("DNABarcodes")
 
 ## 3. 验证安装
 在 PowerShell 中运行：
+
 ```powershell
 # 确保在正确的环境中
 conda activate dna_barcode
