@@ -12,9 +12,9 @@ library(DNABarcodes)
 generate_dna_barcodes <- function(length, n, dist) {
   barcodes <- tryCatch({
     create.dnabarcodes(
+      length,
       n = n,
       dist = dist,
-      length = length,
       metric = "hamming",
       cores = 1
     )
